@@ -98,6 +98,8 @@ class SingleLinkedList {
   }
 
   set(index, val) {
+    if (index < 0 || index >= this.length) return null;
+
     const foundNode = this.get(index);
 
     if (foundNode) {
