@@ -135,7 +135,7 @@ class BinarySearchTree {
 
     while (queue.length) {
       node = queue.shift();
-      data.push(node);
+      data.push(node.value);
 
       if (node.left) queue.push(node.left);
       if (node.right) queue.push(node.right);
