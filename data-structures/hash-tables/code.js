@@ -69,25 +69,20 @@ class HashTable {
 
     for (let i = 0; i < this.keyMap.length; i++)
       if (this.keyMap[i])
-        for (let j = 0; j < this.keyMap[i].length; j++) {
+        for (let j = 0; j < this.keyMap[i].length; j++)
           uniqueValues.add(this.keyMap[i][j][1]);
-        }
 
     return Array.from(uniqueValues);
   }
 
   keys() {
-    let keysArr = [];
+    const uniqueKeys = new Set();
 
-    for (let i = 0; i < this.keyMap.length; i++) {
+    for (let i = 0; i < this.keyMap.length; i++)
       if (this.keyMap[i])
-        for (let j = 0; j < this.keyMap[i].length; j++) {
-          const currentKey = this.keyMap[i][j][0];
+        for (let j = 0; j < this.keyMap[i].length; j++)
+          uniqueKeys.add(this.keyMap[i][j][0]);
 
-          if (!keysArr.includes(currentKey)) keysArr.push(currentKey);
-        }
-    }
-
-    return keysArr;
+    return Array.from(uniqueKeys);
   }
 }
