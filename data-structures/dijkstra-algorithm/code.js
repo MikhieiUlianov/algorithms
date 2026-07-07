@@ -92,8 +92,8 @@ class WeightedGraph {
 
   dijkstra(start, finish) {
     const nodes = new PriorityQueue();
-    const distances = {};
-    const previous = {};
+    const distances = {}; //{ A: 0, B: Infinity, C: Infinity }.
+    const previous = {}; //{ A: null, B: null, C: null }.
     let path = [];
     let smallest;
 
@@ -128,7 +128,6 @@ class WeightedGraph {
           let candidate = distances[smallest] + nextNode.weight;
           let nextNeighbor = nextNode.node;
 
-          // FIXED: Changed 'nextNeighbor' to 'distances[nextNeighbor]'
           if (candidate < distances[nextNeighbor]) {
             // updating new smallest distance to neighbor
             distances[nextNeighbor] = candidate;
@@ -141,6 +140,6 @@ class WeightedGraph {
       }
     }
 
-    return path.concat(smallest).reverse();
+    return path.concat(smallest).reverse(); //concatinating with missing "A"
   }
 }
