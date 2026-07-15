@@ -177,18 +177,18 @@ class SingleLinkedList {
     let fast = head;
   
     while (fast !== null && fast.next !== null) {
-      slow = slow!.next;       // Move 1 step
+      slow = slow.next;       // Move 1 step
       fast = fast.next.next;   // Move 2 steps
     }
   
     return slow; // Points to the exact middle
   }
-    function hasCycle(head:) {
+    function hasCycle(head) {
     let slow = head;
     let fast = head;
   
     while (fast !== null && fast.next !== null) {
-      slow = slow!.next;
+      slow = slow.next;
       fast = fast.next.next;
   
       if (slow === fast) {
